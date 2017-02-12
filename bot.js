@@ -195,12 +195,12 @@ const actions = {
           x += repos[i].title;
           x += '\n';
         }
-        context.similarMovies = '\n'+ '\n'+ x;
+        if(size!=0) context.similarMovies = '\n'+ '\n'+ x;
         //
         
         //(sessionId);
         cb(context)
-        sendImageMessage(sessionId);
+        context.similarMovies = null; //see if that can help us reset
         //return repos;
       }).catch(function(err){
 
