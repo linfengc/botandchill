@@ -58,6 +58,25 @@ var resultArray;
 // }
 
 
+function sendImageMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "image",
+        payload: {
+          url: SERVER_URL + "/assets/rift.png"
+        }
+      }
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+
 const firstEntityValue = (entities, entity) => {
   const val = entities && entities[entity] &&
     Array.isArray(entities[entity]) &&
@@ -177,6 +196,9 @@ const actions = {
           x += '\n';
         }
         context.similarMovies = '\n'+ '\n'+ x;
+        //
+        sendImageMessage(sessionId);
+        //(sessionId);
         cb(context)
         //return repos;
       }).catch(function(err){

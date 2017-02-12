@@ -1,0 +1,26 @@
+curl -X POST -H "Content-Type: application/json" -d '{
+  "setting_type":"greeting", 
+  "greeting":{
+    "text":"Greetings! I am here to help you find new movies, music, books, and shows that match your taste!"
+  }
+  
+
+}' "https://graph.facebook.com/v2.6/me/thread_settings?access_token=EAANpZAygEkdsBABo2cPEMaaZB0CQK7vr0DfgQJUTfK2GvJjkVM6t2n4DSxfibZB3Fs2amZB4uJLUib3OZCM9erWYEqvfiP7Gd1zBdEgXgUDxqTM4hoCaSeNIOgjxJQbvJ6WZB7MOClm2p8a9vXWCZB8C4tHGdzzA5N2UtSXbkRtvQZDZD"
+
+
+
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "recipient":{
+    "id":"USER_ID"
+  },
+  "message":{
+    "attachment":{
+      "type":"image",
+      "payload":{
+        "url":"https://petersapparel.com/img/shirt.png"
+      }
+    }
+  }
+}' "https://graph.facebook.com/v2.6/me/messages?access_token=EAANpZAygEkdsBABo2cPEMaaZB0CQK7vr0DfgQJUTfK2GvJjkVM6t2n4DSxfibZB3Fs2amZB4uJLUib3OZCM9erWYEqvfiP7Gd1zBdEgXgUDxqTM4hoCaSeNIOgjxJQbvJ6WZB7MOClm2p8a9vXWCZB8C4tHGdzzA5N2UtSXbkRtvQZDZD"    
