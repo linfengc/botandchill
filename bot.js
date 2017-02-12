@@ -197,7 +197,7 @@ const actions = {
         }
         context.similarMovies = '\n'+ '\n'+ x;
         //
-        sendImageMessage(sessionId);
+        //sendImageMessage(sessionId);
         //(sessionId);
         cb(context)
         //return repos;
