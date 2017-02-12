@@ -1,5 +1,7 @@
 ## BOT and CHILL
 
+![Logo by Zechariah Guo](http://i.imgur.com/ffx7YyPm.png "Logo by Zechariah Guo")
+
 Bot and Chill is a movie recommendation chatbot built in Messenger. It will give you recommendations for movies based on your preferences.
 
 Try it [here](https://www.facebook.com/Bot-and-Chill-1867670223452163/)!
