@@ -85,7 +85,7 @@ const actions = {
   },
 
   ['getSimilar'](sessionId, context, cb){
-    context.similarMovies = 'hard code movie name';
+    context.similarMovies = 'DATABASE (Waiting for Jason to complete his spaghetti code for it to work)'; //add database here
     cb(context)
   }
 };
