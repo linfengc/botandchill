@@ -151,11 +151,13 @@ const actions = {
         // console.log(repos.length);
         // console.log(repos);
         var x = "";
-        for(var i = 0 ; i < repos.length; i++){
+        var size = repos.length;
+        if(size >= 5) size = 5;
+        for(var i = 0 ; i < size; i++){
           x += repos[i].title;
-          x += ' ';
+          x += '\n';
         }
-        context.similarMovies = x;
+        context.similarMovies = '\n'+ x;
         cb(context)
         //return repos;
       }).catch(function(err){
