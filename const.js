@@ -1,13 +1,14 @@
 'use strict';
 
 // Wit.ai parameters
-const WIT_TOKEN = process.env.WIT_TOKEN;
+const WIT_TOKEN = "W423ZW4BT667RIQXIGRXW4ULUMLPTWDO"
+;
 if (!WIT_TOKEN) {
   throw new Error('missing WIT_TOKEN');
 }
 
 // Messenger API parameters
-const FB_PAGE_TOKEN = process.env.FB_PAGE_TOKEN;
+const FB_PAGE_TOKEN = "EAANpZAygEkdsBACeJHq5ku6WmXDvLQH0W8ZCw6XNpADZAJbuTQZAgS0ZBvrZAHikYXolpQebHaBcwu3IKP0BG57CJFZCbmROL93aRrmTVOUxIGrZB40J6SZAhlN0jK0MNX2xs6VGQazFqE1ukM74LpbM5y7BKrPr4ZC1bMgM4i2fCxJAZDZD";
 
 var FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN;
 if (!FB_VERIFY_TOKEN) {
