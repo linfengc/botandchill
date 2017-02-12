@@ -6,6 +6,58 @@ const Wit = require('node-wit').Wit;
 const FB = require('./facebook.js');
 const Config = require('./const.js');
 
+var express = require('express');
+var app = express();
+var request = require('request');
+var rp = require('request-promise');
+
+var r;
+var resultArray;
+function getData(term){
+  var urlbase = "https://calm-sierra-94596.herokuapp.com/movies/";
+  var urlappend = term;
+  // app.get('/', function (req, res) {
+    // do something with apps
+    // request({
+    //     url: urlbase + urlappend,
+    //     json: true
+    // }, function (error, response, body) {
+    //     resultArray = response.body;
+    //     // console.log(resultArray);
+    //     // res.send(response.body);
+    //     if (!error && response.statusCode === 200) { //goes in here if success
+    //       resultArray = response.body;
+    //       r = resultArray;
+    //       // console.log(resultArray[0]);
+    //       // console.log(resultArray[0].title);
+    //       return resultArray;
+    //     }
+    // }).then(function(json){
+    //   return resusltArray;
+    // });
+    // return resultArray;
+  // });
+  var options = {
+    uri: urlbase + urlappend,
+    qs: {
+      access_token: ''
+    },
+    headers:{
+      'User-Agent': 'Request- Promise'
+    },
+    json:true
+  };
+  rp(options)
+    .then(function(repos){
+      // console.log(repos.length);
+      // console.log(repos);
+      return repos;
+    }).catch(function(err){
+
+    });
+}
+
+
 const firstEntityValue = (entities, entity) => {
   const val = entities && entities[entity] &&
     Array.isArray(entities[entity]) &&
@@ -77,17 +129,41 @@ const actions = {
   },
 
   // fetch-weather bot executes
-  ['fetch-weather'](sessionId, context, cb) {
-    // Here should go the api call, e.g.:
-    // context.forecast = apiCall(context.loc)
-    context.forecast = 'sunny';
-    cb(context);
-  },
+ 
 
   ['getSimilar'](sessionId, context, cb){
-    context.similarMovies = 'DATABASE (Waiting for Jason to complete his spaghetti code for it to work)'; //add database here
-    cb(context)
-  }
+    // var x = getData('leon the professional', r);
+    
+    var urlbase = "https://calm-sierra-94596.herokuapp.com/movies/";
+    var urlappend = 'leon the professional';
+    var options = {
+      uri: urlbase + urlappend,
+      qs: {
+        access_token: ''
+      },
+      headers:{
+        'User-Agent': 'Request- Promise'
+      },
+      json:true
+    };
+    rp(options)
+      .then(function(repos){
+        // console.log(repos.length);
+        // console.log(repos);
+        var x = "";
+        for(var i = 0 ; i < repos.length; i++){
+          x += repos[i].title;
+          x += ' ';
+        }
+        context.similarMovies = x;
+        cb(context)
+        //return repos;
+      }).catch(function(err){
+
+      });
+      // context.similarMovies = suggestions; //add database here
+      // cb(context)
+    }
 };
 
 
