@@ -17,7 +17,13 @@ const firstEntityValue = (entities, entity) => {
   return typeof val === 'object' ? val.value : val;
 };
 
-// Bot actions
+
+
+
+
+
+
+// Wit.ai Bot actions
 const actions = {
   say(sessionId, context, message, cb) {
     console.log(message);
@@ -54,6 +60,8 @@ const actions = {
       cb();
     }
   },
+
+
   merge(sessionId, context, entities, message, cb) {
     // Retrieve the location entity and store it into a context field
     const loc = firstEntityValue(entities, 'location');
@@ -75,6 +83,11 @@ const actions = {
     context.forecast = 'sunny';
     cb(context);
   },
+
+  ['getSimilar'](sessionId, context, cb){
+    context.movies = 'hard code movie name';
+    cb(context)
+  }
 };
 
 
