@@ -85,7 +85,7 @@ const actions = {
   },
 
   ['getSimilar'](sessionId, context, cb){
-    context.movies = 'hard code movie name';
+    context.similarMovies = 'hard code movie name';
     cb(context)
   }
 };
