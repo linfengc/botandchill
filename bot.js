@@ -157,7 +157,7 @@ const actions = {
           x += repos[i].title;
           x += '\n';
         }
-        context.similarMovies = '\n'+ x;
+        context.similarMovies = '\n'+ '\n'+ x;
         cb(context)
         //return repos;
       }).catch(function(err){
