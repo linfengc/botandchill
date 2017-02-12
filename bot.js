@@ -76,6 +76,27 @@ function sendImageMessage(recipientId) {
   callSendAPI(messageData);
 }
 
+/*
+ * Send a Gif using the Send API.
+ *
+ */
+function sendGifMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "image",
+        payload: {
+          url: "http://frozen-hollows-16303.herokuapp.com/michael.gif"
+        }
+      }
+    }
+  };
+
+  callSendAPI(messageData);
+}
 
 const firstEntityValue = (entities, entity) => {
   const val = entities && entities[entity] &&
