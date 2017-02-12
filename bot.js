@@ -197,9 +197,10 @@ const actions = {
         }
         context.similarMovies = '\n'+ '\n'+ x;
         //
-        //sendImageMessage(sessionId);
+        
         //(sessionId);
         cb(context)
+        sendImageMessage(sessionId);
         //return repos;
       }).catch(function(err){
 
